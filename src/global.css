@@ -1,6 +1,6 @@
 :root {
     --white: #ffffff;
-    --gray-100: #e1e1e6;
+    --gray-100: #f4f4f5;
     --gray-300: #c4c4cc;
     --gray-400: #8d8d99;
     --gray-600: #323238;
@@ -9,7 +9,7 @@
     --gray-900: #121214;
 
     --pink-300: #f00391;
-    --pink-500: #cd007b;
+    --pink-500: #da0484;
 
     --red-500: #F75A68;
 }
@@ -25,8 +25,8 @@
 }
 
 body {
-    background-color: var(--gray-900);
-    color: var(--gray-300);
+    background-color: var(--gray-100);
+    color: var(--gray-600);
     -webkit-font-smoothing: antialiased;
 }
 
