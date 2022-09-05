@@ -8,14 +8,14 @@
     --gray-800: #202024;
     --gray-900: #121214;
 
-    --green-300: #00B37E;
-    --green-500: #00875F;
+    --pink-300: #f00391;
+    --pink-500: #cd007b;
 
     --red-500: #F75A68;
 }
 
 :focus {
-    outline: 1px solid var(--green-500);
+    outline: 1px solid var(--pink-500);
 }
 
 * {
