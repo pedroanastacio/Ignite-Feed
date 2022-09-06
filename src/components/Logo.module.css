@@ -1,0 +1,13 @@
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Satisfy', cursive;
+    font-size: 2rem;
+    color: var(--gray-600);
+    gap: 0.5rem;
+}
+
+.logo img {
+    height: 2.5rem;
+}
