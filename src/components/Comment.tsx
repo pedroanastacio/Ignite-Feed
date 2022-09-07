@@ -4,6 +4,7 @@ import { useState } from "react"
 import { Avatar } from "./Avatar"
 
 import styles from "./Comment.module.css"
+import { Modal } from "./Modal"
 
 interface CommentProps {
     content: string
@@ -11,9 +12,14 @@ interface CommentProps {
 }
 
 export function Comment({ content, onDeleteComment }: CommentProps) {
-    const [likeCount, setLikeCount] = useState<number>(0);
+    const [likeCount, setLikeCount] = useState<number>(0)
+    const [showDeleteModal, setShowDeleteModal] = useState<boolean>(false)
 
     function handleDeleteComment() {
+        setShowDeleteModal(true);
+    }
+
+    function handleConfirmDeleteComment() {
         onDeleteComment(content)
     }
 
@@ -22,35 +28,44 @@ export function Comment({ content, onDeleteComment }: CommentProps) {
     }
 
     return (
-        <div className={styles.comment}>
-            <Avatar hasBorder={false} src="https://github.com/diego3g.png" />
+        <>
+            <div className={styles.comment}>
+                <Avatar hasBorder={false} src="https://github.com/diego3g.png" />
 
-            <div className={styles.commentBox}>
-                <div className={styles.commentContent}>
-                    <header>
-                        <div className={styles.authorAndTime}>
-                            <strong>Diego Fernandes</strong>
-                            <time title="15 de julho às 09:02h" dateTime="2020-07-15 09:02:13">1h</time>
-                        </div>
+                <div className={styles.commentBox}>
+                    <div className={styles.commentContent}>
+                        <header>
+                            <div className={styles.authorAndTime}>
+                                <strong>Diego Fernandes</strong>
+                                <time title="15 de julho às 09:02h" dateTime="2020-07-15 09:02:13">1h</time>
+                            </div>
 
-                        <button 
-                        title="Deletar comentário"
-                        onClick={handleDeleteComment}
-                        >
-                            <Trash size={24}/>
+                            <button
+                                title="Deletar comentário"
+                                onClick={handleDeleteComment}
+                            >
+                                <Trash size={24} />
+                            </button>
+                        </header>
+
+                        <p>{content}</p>
+                    </div>
+
+                    <footer>
+                        <button onClick={handleLikeComment}>
+                            <HandsClapping />
+                            Aplaudir <span>{likeCount}</span>
                         </button>
-                    </header>
-
-                    <p>{content}</p>
+                    </footer>
                 </div>
-
-                <footer>
-                    <button onClick={handleLikeComment}>
-                        <HandsClapping />
-                        Aplaudir <span>{likeCount}</span>
-                    </button>
-                </footer>
             </div>
-        </div>
+            <Modal
+                title="Excluir comentário"
+                content="Você tem certeza que gostaria de excluir este comentário?"
+                isOpen={showDeleteModal}
+                setIsOpen={setShowDeleteModal}
+                onConfirm={handleConfirmDeleteComment}
+            />
+        </>
     )
 }

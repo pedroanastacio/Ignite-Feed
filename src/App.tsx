@@ -4,6 +4,7 @@ import { Router } from "./Router"
 import "./global.css"
 
 export function App() {
+
   return (
     <BrowserRouter>
       <Router />
