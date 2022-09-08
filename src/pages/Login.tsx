@@ -1,3 +1,6 @@
+import { useContext } from "react"
+import { useNavigate } from "react-router-dom"
+
 import { Logo } from "../components/Logo"
 import { Button } from "../components/Button"
 
@@ -6,12 +9,16 @@ import facebookLogo from "../assets/facebook-logo.svg"
 import gitHubLogo from "../assets/github-logo.svg"
 
 import styles from "./Login.module.css"
-import { useNavigate } from "react-router-dom"
+import { AuthContext, AuthActions } from "../contexts/AuthContext"
+
+
 
 export function Login() {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
+  const { dispatch } = useContext(AuthContext)
 
   function handleLoginClick() {
+    dispatch({ type: AuthActions.AUTH_SUCCESS })
     navigate("/posts");
   }
 
