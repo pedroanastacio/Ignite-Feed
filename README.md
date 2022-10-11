@@ -24,13 +24,13 @@ A simple feed developed during the ReactJS Track 2022 of Rocketseat's Ignite cou
   
  ## :zap: Technologies
   <div style="display: inline_block"><br>
-   <a href="https://www.typescriptlang.org/">
+  <a href="https://www.typescriptlang.org/" title="TypeScript">
      <img align="center" alt="TypeScript" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg">
    </a>
-   <a href="https://reactjs.org/">
+   <a href="https://reactjs.org/" title="ReactJS">
     <img align="center" alt="ReactJS" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg">
    </a>
-    <a href="https://vitejs.dev/">
+    <a href="https://vitejs.dev/" title="Vite">
     <img align="center" alt="Vite" height="30" width="40" src="https://www.svgrepo.com/show/354521/vitejs.svg">
    </a>
   </div>
